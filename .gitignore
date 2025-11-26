@@ -1,3 +1,5 @@
 deploy-win
 build
+out
 .vscode
+.vs

@@ -2,7 +2,7 @@
 
 mkdir "deploy-win"
 mkdir "deploy-win\ffmpeg"
-copy "build\OurTube.exe" "deploy-win"
+copy "build\Release\OurTube.exe" "deploy-win"
 "windeployqt.exe" --no-system-d3d-compiler --no-system-dxc-compiler --no-opengl-sw --release --no-translations "deploy-win\OurTube.exe"
 
 IF NOT EXIST "deploy-win\yt-dlp.exe" (
@@ -20,8 +20,10 @@ IF NOT EXIST "deploy-win\ffmpeg\ffmpeg.exe" (
         move /Y "%%D\bin\ffprobe.exe" "deploy-win\ffmpeg"
         rd /s /q "deploy-win\ffmpeg-temp"
         del /q "deploy-win\ffmpeg-temp.7z"
+	pause
         exit /b 0
     )
 ) ELSE (
     echo ffmpeg.exe already exists, skipping download.
 )
+pause
