@@ -15,11 +15,14 @@ Prerequisites:
 - [7zip](https://www.7-zip.org/)
 - [Qt6](https://www.qt.io/download-qt-installer-oss)
 - [CMake](https://cmake.org/download/)
-- mingw64
+- mingw_64
 
 ```sh
-$ cmake -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
-# or add Qt6 cmake path
-$ cmake -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="C:\Qt\6.10.1\mingw_64\lib\cmake"
-$ cmake --build build
+$ make
+```
+
+### Arch Linux
+
+```
+sudo pacman -S --needed
 ```
