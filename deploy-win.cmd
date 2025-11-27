@@ -3,7 +3,7 @@
 mkdir "deploy"
 mkdir "deploy\ffmpeg"
 copy "build\Release\ourtube.exe" "deploy\OurTube.exe"
-windeployqt.exe --no-system-d3d-compiler --no-system-dxc-compiler --no-opengl-sw --release --no-translations "deploy\OurTube.exe"
+windeployqt.exe "deploy\OurTube.exe" --release --no-system-d3d-compiler --no-system-dxc-compiler --no-opengl-sw --no-translations --no-network --no-svg
 
 IF NOT EXIST "deploy\yt-dlp.exe" (
     curl -L "https://github.com/yt-dlp/yt-dlp/releases/download/2025.11.12/yt-dlp.exe" -o "deploy\yt-dlp.exe"
@@ -19,7 +19,7 @@ IF NOT EXIST "deploy\ffmpeg\ffmpeg.exe" (
         move /Y "%%D\bin\ffprobe.exe" "deploy\ffmpeg"
         rd /s /q "deploy\ffmpeg-temp"
         del /q "deploy\ffmpeg-temp.7z"
-	pause
+        pause
         exit /b 0
     )
 ) ELSE (
