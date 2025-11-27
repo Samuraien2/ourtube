@@ -81,11 +81,11 @@ int main(int argc, char *argv[])
         QString format = comboBox->currentText();
         QString outputFolder = folderPath->text();
 
-        #if _WIN32
-                QString ytDlpPath = QCoreApplication::applicationDirPath() + "/yt-dlp.exe";
-        #else
-                QString ytDlpPath = "yt-dlp";
-        #endif
+#if _WIN32
+        QString ytDlpPath = QCoreApplication::applicationDirPath() + "/yt-dlp.exe";
+#else
+        QString ytDlpPath = "yt-dlp";
+#endif
 
         QStringList args;
         args << url;
