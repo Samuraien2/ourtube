@@ -6,7 +6,6 @@
 #include <QVBoxLayout>
 #include <QFileDialog>
 #include <QProcess>
-#include <QDebug>
 #include <QStandardPaths>
 #include <QTextEdit>
 
@@ -82,7 +81,7 @@ int main(int argc, char *argv[])
         QString outputFolder = folderPath->text();
 
 #if _WIN32
-        QString ytDlpPath = QCoreApplication::applicationDirPath() + "/yt-dlp.exe";
+        QString ytDlpPath = QCoreApplication::applicationDirPath() + "/bin/yt-dlp.exe";
 #else
         QString ytDlpPath = "yt-dlp";
 #endif
@@ -91,7 +90,7 @@ int main(int argc, char *argv[])
         args << url;
         args << "-o" << (outputFolder + "/%(title)s.%(ext)s");
 #if _WIN32
-        args << "--ffmpeg-location" << (QCoreApplication::applicationDirPath() + "/ffmpeg");
+        args << "--ffmpeg-location" << (QCoreApplication::applicationDirPath() + "/bin");
 #endif
 
         if (format != "webm") {
