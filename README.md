@@ -12,8 +12,8 @@ Youtube Video Downloader using yt-dlp, ffmpeg and Qt6.
 - [Visual Studio 2022/2026](https://visualstudio.microsoft.com/vs/community/)
 
 ### Instructions
-
-dont remember
+1. Run `compile.cmd`, the final executable will be placed in ./build/Release/ourtube.exe. This executable doesn't work standalone.
+2. Run `deploy-win.cmd`, to bundle and download all libraries into ./deploy/ folder.
 
 ## Linux
 
@@ -27,3 +27,6 @@ dont remember
 
 ### Instructions
 Run `./nob`, the final executable will be placed in ./build/ourtube
+
+# TODO
+- Add windows installer/uninstaller
