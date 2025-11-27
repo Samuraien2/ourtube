@@ -15,14 +15,15 @@ Youtube Video Downloader using yt-dlp, ffmpeg and Qt6.
 
 dont remember
 
-## Arch Linux
+## Linux
 
-### Prerequisites
-```sh
-$ sudo pacman -S --needed qt6-base yt-dlp ffmpeg
-```
+### Dependencies
+
+#### For Arch and derivatives:
+`sudo pacman -S --needed qt6-base yt-dlp ffmpeg cmake gcc`
+
+#### For Void Linux:
+`sudo xbps-install -S qt6-base qt6-base-devel yt-dlp ffmpeg cmake gcc`
 
 ### Instructions
-```sh
-$ ./nob
-```
+Run `./nob`, the final executable will be placed in ./build/ourtube
