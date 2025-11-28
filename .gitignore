@@ -1,5 +1,6 @@
-deploy
-build
-out
-.vscode
-.vs
+/deploy
+/build
+/out
+/.vscode
+/.vs
+/.cache
