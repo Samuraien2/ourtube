@@ -23,10 +23,10 @@ int main(int argc, char *argv[])
     layout->addWidget(textInput, 0);
 
     QComboBox *comboBox = new QComboBox();
-    comboBox->addItem("webm");
     comboBox->addItem("mp3");
-    comboBox->addItem("aac");
     comboBox->addItem("mp4");
+    comboBox->addItem("webm");
+    comboBox->addItem("aac");
     comboBox->addItem("mkv");
 
     layout->addWidget(comboBox);
@@ -87,8 +87,7 @@ int main(int argc, char *argv[])
 #endif
 
         QStringList args;
-        args << url;
-        args << "-o" << (outputFolder + "/%(title)s.%(ext)s");
+        args << url << "-o" << (outputFolder + "/%(title)s.%(ext)s");
 #if _WIN32
         args << "--ffmpeg-location" << (QCoreApplication::applicationDirPath() + "/bin");
 #endif
