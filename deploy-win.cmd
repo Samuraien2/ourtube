@@ -4,6 +4,7 @@ mkdir "deploy"
 mkdir "deploy\bin"
 copy "build\Release\ourtube.exe" "deploy\OurTube.exe"
 windeployqt.exe "deploy\OurTube.exe" --release --no-system-d3d-compiler --no-system-dxc-compiler --no-opengl-sw --no-translations --no-network --no-svg
+rd /s /q "deploy\imageformats"
 
 IF NOT EXIST "deploy\bin\yt-dlp.exe" (
     curl -L "https://github.com/yt-dlp/yt-dlp/releases/download/2025.11.12/yt-dlp.exe" -o "deploy\bin\yt-dlp.exe"
