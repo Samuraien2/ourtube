@@ -81,17 +81,14 @@ int main(int argc, char *argv[])
         QString outputFolder = folderPath->text();
 
 #if _WIN32
-        QString ytDlpPath = QCoreApplication::applicationDirPath() + "/bin/yt-dlp.exe";
-#else
-        QString ytDlpPath = "yt-dlp";
+        QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+        QString path = QCoreApplication::applicationDirPath() + "/bin" + QDir::listSeparator() + env.value("PATH");
+        env.insert("PATH", path);
+        process->setProcessEnvironment(env);
 #endif
 
         QStringList args;
-        args << url;
-        args << "-o" << (outputFolder + "/%(title)s.%(ext)s");
-#if _WIN32
-        args << "--ffmpeg-location" << (QCoreApplication::applicationDirPath() + "/bin");
-#endif
+        args << url << "-o" << (outputFolder + "/%(title)s.%(ext)s");
 
         if (format != "webm") {
             args << "-t" << format;
@@ -113,7 +110,7 @@ int main(int argc, char *argv[])
             textEdit->setTextCursor(cursor);
         });
 
-        process->start(ytDlpPath, args);
+        process->start("yt-dlp", args);
     });
 
     return app.exec();
