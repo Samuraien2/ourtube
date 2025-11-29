@@ -9,11 +9,11 @@ Youtube Video Downloader using yt-dlp, ffmpeg and Qt6.
 ### Prerequisites
 - [7zip](https://www.7-zip.org/)
 - [Qt6 for MSVC](https://www.qt.io/download-qt-installer-oss)
-- [Visual Studio 2022/2026](https://visualstudio.microsoft.com/vs/community/)
+- [Visual Studio 2026](https://visualstudio.microsoft.com/vs/community/)
 
 ### Instructions
-1. Run `compile.cmd`, the final executable will be placed in ./build/Release/ourtube.exe. This executable doesn't work standalone.
-2. Run `deploy-win.cmd`, to bundle and download all libraries into ./deploy/ folder.
+1. Open Project with Visual Studio or x64 Native Tools Command Prompt (or any environment with CMake and Qt6 binaries)
+2. Run `compile.cmd` (requires internet the first time to download dependencies)
 
 ## Linux
 
@@ -27,6 +27,3 @@ Youtube Video Downloader using yt-dlp, ffmpeg and Qt6.
 
 ### Instructions
 Run `./nob`, the final executable will be placed in ./build/ourtube
-
-# TODO
-- Add windows installer/uninstaller
