@@ -22,10 +22,11 @@ IF NOT EXIST "deps\ffmpeg.7z" (
         move /Y "%%D\bin\ffmpeg.exe" "deps"
         move /Y "%%D\bin\ffprobe.exe" "deps"
         rd /s /q "deps\ffmpeg"
-        exit /b 0
+        goto :EndLoop
     )
 )
 
+:EndLoop
 for %%F in (yt-dlp ffmpeg ffprobe) do (
     copy /Y "deps\%%F.exe" "%DIR%\bin"
 )
