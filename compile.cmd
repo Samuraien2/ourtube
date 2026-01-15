@@ -11,7 +11,7 @@ rd /s /q "%DIR%\imageformats"
 
 IF NOT EXIST "deps\yt-dlp.exe" (
     echo Downloading yt-dlp...
-    curl -L "https://github.com/yt-dlp/yt-dlp/releases/download/2025.11.12/yt-dlp.exe" -o "deps\yt-dlp.exe"
+    curl -L "https://github.com/yt-dlp/yt-dlp/releases/download/2025.12.08/yt-dlp.exe" -o "deps\yt-dlp.exe"
 )
 
 IF NOT EXIST "deps\ffmpeg.7z" (
